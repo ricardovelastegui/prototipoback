@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.registroprototipo.Entity.Usuario;
+
 import com.example.registroprototipo.Repositorio.UserRepo;
 
 @RestController
@@ -19,6 +20,7 @@ public class UsuarioController {
 
     @Autowired
     private UserRepo userRepo;
+
 
     @PostMapping("/registro")
     public ResponseEntity<String> registrarUsuario(@RequestBody Usuario usuario) {
