@@ -33,9 +33,9 @@ public class UsuarioController {
     public ResponseEntity<String> login(@RequestBody Usuario usuario) {
         Usuario usuarioExistente = userRepo.findByUsername(usuario.getUsername());
         if (usuarioExistente == null || !usuarioExistente.getPassword().equals(usuario.getPassword())) {
-            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Credenciales inválidas");
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("{\"error\": \"Credenciales inválidas\"}");
         }
-        return ResponseEntity.ok("Inicio de sesión exitoso");
+        return ResponseEntity.ok("{\"message\": \"Inicio de sesión exitoso\"}");
     }
     
 }
