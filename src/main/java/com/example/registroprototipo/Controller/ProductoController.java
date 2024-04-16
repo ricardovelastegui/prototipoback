@@ -27,8 +27,10 @@ public class ProductoController {
 
     @PostMapping("/add-prod")
     public ResponseEntity<String> addProductToUser(@RequestParam Long userId, @RequestBody Producto producto ){
-        Usuario usuario = userRepo.findById(userId).orElseThrow( () -> new NotFoundException("user not found"));
+        Usuario usuario = userRepo.findById(userId).orElseThrow( () -> new com.example.registroprototipo.NotFoundException("User not found"));
         producto.setUsuario(usuario);
+        productoRepo.save(producto);
+        return ResponseEntity.ok("{\"message\": \"Producto agregado exitosamente\"}");
         
     }
 
