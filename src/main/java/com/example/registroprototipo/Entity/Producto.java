@@ -6,10 +6,12 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.Table;
 import lombok.Data;
 
 @Entity
 @Data
+@Table(name = "losproducts")
 public class Producto {
 
     @Id
@@ -20,9 +22,10 @@ public class Producto {
     private Double price;
     private String tipo;
 
-    @ManyToOne
-    @JoinColumn(name = "usuario_id", nullable = false)
-    private Usuario usuario;
+
+    // @ManyToOne
+    // @JoinColumn(name = "usuario_id", nullable = false)
+    // private Usuario usuario;
 
     
 }
