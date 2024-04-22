@@ -21,9 +21,9 @@ import com.example.registroprototipo.Entity.Usuario;
 import com.example.registroprototipo.Repositorio.UserRepo;
 import com.example.registroprototipo.Service.ProductoService;
 
-@RestController
+    @RestController
 @RequestMapping("/api/productos")
-@CrossOrigin("*")
+@CrossOrigin(origins = "http://localhost:4200/")
 public class ProductoController {
 
     @Autowired
@@ -40,7 +40,7 @@ public class ProductoController {
     //     return ResponseEntity.ok("{\"message\": \"Producto agregado exitosamente\"}");
         
     // }
-    @PostMapping("/")
+    @PostMapping("/agregar")
     public Producto agregarprodu(@RequestBody Producto producto){
         return productoService.agregarprodu(producto);
     }

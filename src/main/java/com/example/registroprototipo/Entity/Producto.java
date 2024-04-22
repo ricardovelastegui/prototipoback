@@ -16,12 +16,11 @@ public class Producto {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long p_id;
+    private Long id;
 
     private String nombre;
     private Double price;
     private String tipo;
-
 
     // @ManyToOne
     // @JoinColumn(name = "usuario_id", nullable = false)
